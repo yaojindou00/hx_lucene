@@ -48,11 +48,27 @@ public class DocumentUtils {
         ITextField fAddress = new ITextField("address",element.getAddress()==null?"":element.getAddress(),StringField.Store.YES);
         fAddress.setBoost(element.getOrder());
         doc.add(fAddress);
+        ITextField fr = new ITextField("fr",element.getFr()==null?"":element.getFr(),StringField.Store.YES);
+        fr.setBoost(element.getOrder());
+        doc.add(fr);
+        ITextField tel = new ITextField("tel",element.getTel()==null?"":element.getTel(),StringField.Store.YES);
+        tel.setBoost(element.getOrder());
+        doc.add(tel);
+        ITextField cusccode = new ITextField("cusccode",element.getCusccode()==null?"":element.getCusccode(),StringField.Store.YES);
+        cusccode.setBoost(element.getOrder());
+        doc.add(cusccode);
         doc.add(new StringField("table",element.getTable()==null?"":element.getTable(),StringField.Store.YES));
         doc.add(new StringField("district",element.getDistrict()==null?"":element.getDistrict(),StringField.Store.YES));
 
         doc.add(new NumericDocValuesField("order", NumberUtile.float2long(element.getOrder())));
         doc.add(new StringField("describe",Float.toString(element.getOrder()),StringField.Store.YES));
+        doc.add(new StringField("iszdy",element.getIszdy().toString(),StringField.Store.YES));
+        doc.add(new StringField("isxkz",element.getIsxkz().toString(),StringField.Store.YES));
+        doc.add(new StringField("isonline",element.getIsonline().toString(),StringField.Store.YES));
+        doc.add(new StringField("corptype",element.getCorptype().toString(),StringField.Store.YES));
+ 
+
+        
         if(element.getGeometry() != null){
             Point jtsPoint = (Point)element.getGeometry();
             try {
@@ -79,6 +95,14 @@ public class DocumentUtils {
         element.setTable(document.get("table"));
         element.setAddress(document.get("address"));
         element.setDistrict(document.get("district"));
+        element.setFr(document.get("fr"));
+        element.setTel(document.get("tel"));
+        element.setCusccode(document.get("cusccode"));
+        element.setIszdy(Double.valueOf( document.get("iszdy")));
+        element.setIsxkz(Double.valueOf(document.get("isxkz")));
+        element.setIsonline(Double.valueOf(document.get("isonline")));
+        element.setCorptype(Double.valueOf(document.get("corptype")));
+       
         try{
             if(document.get("shape") != null){
                 element.setGeometry(JTSTools.getInstance().toGeometry(document.get("shape")));
