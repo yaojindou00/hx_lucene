@@ -9,7 +9,7 @@
       
     </parent>
   
-    <artifactId>geocoding-lucene</artifactId>
+    <artifactId>hx_lucene</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>geocoding</name>
