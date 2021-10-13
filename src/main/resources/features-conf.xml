@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="GBK" ?>
 <root>
   
-    <layer code="cun" value="村"/>
-   <!--    <layer code="GL_SXJ" value="摄像机"/> 
-    <layer code="GL_QBB" value="情报板"/>
-    <layer code="GL_JTLGCZ" value="交通量观测站"/>
-    <layer code="GL_QL" value="桥梁"/>
-    <layer code="GL_SD" value="隧道"/>
-    <layer code="GL_SFZ" value="收费站"/>
-    <layer code="GL_FWQ" value="服务区"/>
-    <layer code="BI_QCWX" value="汽车维修"/>
-    <layer code="GL_CLQC" value="车辆检测"/>
-    <layer code="GL_TCQ" value="停车区"/> -->
+     <layer code="sx_feiqi" value="废气"/>
+	 <layer code="sx_feishui" value="废水"/>
+	 <layer code="sx_wsclc" value="污水处理厂"/>
+	 <layer code="sx_fsfqwsclc" value="废水废气污水处理厂"/>
 </root>        
